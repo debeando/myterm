@@ -1,4 +1,4 @@
-myterm
-======
+#My custom Bash
+===
 
-My custom terminal
+This is my customized terminal, inside contains; themes, scripts, configs, and more...
