@@ -1,0 +1,109 @@
+# Include scripts
+# ---------------
+if [ -f ~/.myterm/bash/scripts/battery.sh ]; then
+  . ~/.myterm/bash/scripts/battery.sh
+fi
+
+if [ -f ~/.myterm/bash/scripts/extract.sh ]; then
+  . ~/.myterm/bash/scripts/extract.sh
+fi
+
+if [ -f ~/.myterm/bash/scripts/ip.sh ]; then
+  . ~/.myterm/bash/scripts/ip.sh
+fi
+
+# Load Bash Completion
+# --------------------
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
+# Git branch in prompt
+# --------------------
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+# Change colour of terminal by profile
+# ------------------------------------
+if [ -n "$BASH_VERSION" ]; then
+  export SUDO_PS1="\[\033[31m\]\u:\[\033[32m\]\w#\[\e[0m\] "
+  export PS1="\[\033[36m\]\u:\[\033[32m\]\w\[\033[31m\]\$(parse_git_branch)\[\033[32m\]\$\[\e[0m\] "
+  export CLICOLOR=1
+  export LSCOLORS=ExFxBxDxCxegedabagacad
+fi
+
+# Add grep colors
+# ---------------
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;35;40'
+
+# Set Language
+# ------------
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
+# Set editor
+# ----------
+export EDITOR='vim'
+
+# don't put duplicate lines in the history
+# ----------------------------------------
+# export HISTCONTROL=ignoredups
+
+# Set custom alias
+# ----------------
+alias l='ls'
+alias ll='ls -lahGF'
+alias h='history'
+alias hg="history | grep"
+alias c='clear'
+alias ss='sudo su'
+alias t='tail -f'
+alias ..='cd ..'
+alias cd..='cd ..'
+alias loadme='source ~/.bash_profile'
+
+# Set custom Alias for Git
+# ------------------------
+alias gs='git status'
+alias gc='git commit'
+alias ga='git add'
+alias gd='git diff'
+alias gb='git branch'
+alias gl='git log'
+alias gsb='git show-branch'
+alias gco='git checkout'
+alias gg='git grep'
+alias gk='gitk --all'
+alias gr='git rebase'
+alias gri='git rebase --interactive'
+alias gcp='git cherry-pick'
+alias grm='git rm'
+
+# Mac OS X
+# --------
+alias mydownloads="sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent'"
+alias cleardownloads="sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+
+# Mac OS X Wifi
+# -------------
+alias wifion="networksetup -setairportpower en1 on"
+alias wifioff="networksetup -setairportpower en1 off"
+
+# List open sockets
+# -----------------
+alias los='sudo /usr/sbin/lsof -i -P'
+
+# SSH Servers
+# -----------
+alias awsmy="ssh -i /Users/nicola51980/Dropbox/PrivateKeys/AmazonEC2/nicola51980.pem ubuntu@dev.swapbytes.com"
+alias awsdf="ssh root@188.138.113.46 -i /Users/nicola51980/Dropbox/PrivateKeys/GestionaRadio/DiarioFinanciero.pem"
+alias awsgrw="ssh ubuntu@46.137.83.221 -i /Users/nicola51980/Dropbox/PrivateKeys/GestionaRadio/GestionaRadio.pem"
+alias awsgrs="ssh ubuntu@46.137.102.13 -i /Users/nicola51980/Dropbox/PrivateKeys/GestionaRadio/GestionaRadio.pem"
+
+
+# Translate by Terminal
+alias es='export TLSOURCE=en TLTARGET=es && ~/.myterm/bash/scripts/translate.sh'
+alias en='export TLSOURCE=es TLTARGET=en && ~/.myterm/bash/scripts/translate.sh'
