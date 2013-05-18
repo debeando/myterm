@@ -1,0 +1,4 @@
+myterm
+======
+
+My custom terminal
