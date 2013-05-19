@@ -31,6 +31,7 @@ if [ -n "$BASH_VERSION" ]; then
   export PS1="\[\033[36m\]\u:\[\033[32m\]\w\[\033[31m\]\$(parse_git_branch)\[\033[32m\]\$\[\e[0m\] "
   export CLICOLOR=1
   export LSCOLORS=ExFxBxDxCxegedabagacad
+  export TERM="xterm-color"
 fi
 
 # Add grep colors
@@ -92,17 +93,14 @@ alias cleardownloads="sqlite3 ~/Library/Preferences/com.apple.LaunchServices.Qua
 alias wifion="networksetup -setairportpower en1 on"
 alias wifioff="networksetup -setairportpower en1 off"
 
+# Mac OS X Flush DNS
+# ------------------
+alias flushdns='sudo dscacheutil -flushcache'
+alias newhosts='sudo vi /etc/hosts'
+
 # List open sockets
 # -----------------
 alias los='sudo /usr/sbin/lsof -i -P'
-
-# SSH Servers
-# -----------
-alias awsmy="ssh -i /Users/nicola51980/Dropbox/PrivateKeys/AmazonEC2/nicola51980.pem ubuntu@dev.swapbytes.com"
-alias awsdf="ssh root@188.138.113.46 -i /Users/nicola51980/Dropbox/PrivateKeys/GestionaRadio/DiarioFinanciero.pem"
-alias awsgrw="ssh ubuntu@46.137.83.221 -i /Users/nicola51980/Dropbox/PrivateKeys/GestionaRadio/GestionaRadio.pem"
-alias awsgrs="ssh ubuntu@46.137.102.13 -i /Users/nicola51980/Dropbox/PrivateKeys/GestionaRadio/GestionaRadio.pem"
-
 
 # Translate by Terminal
 alias es='export TLSOURCE=en TLTARGET=es && ~/.myterm/bash/scripts/translate.sh'
