@@ -22,12 +22,8 @@ ln -s ~/.myterm/bash/dotfiles/gitignore_global ~/.gitignore_global
 
 # Run several config commands.
 # ============================
-
-# Configure git:
-git config --global core.excludesfile ~/.gitignore_global
-
-# Open Terminal.app to configure theme.
-open .myterm/bash/theme/Solarized\ Dark\ ansi.terminal
+~/.myterm/configs/git.sh
+~/.myterm/configs/osx.sh
 
 # Reload profile.
 # ===============
