@@ -145,11 +145,6 @@ defaults write com.apple.terminal StringEncodings -array 4
 # Use a modified version of the Pro theme by default in Terminal.app
 open ~/.myterm/bash/theme/Solarized\ Dark\ ansi.terminal
 
-# Wait a bit to make sure the theme is loaded
-sleep 1
-defaults write com.apple.terminal "Default Window Settings" -string "Solarized Dark ansi"
-defaults write com.apple.terminal "Startup Window Settings" -string "Solarized Dark ansi"
-
 ###############################################################################
 # Time Machine                                                                #
 ###############################################################################

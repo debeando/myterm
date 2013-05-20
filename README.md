@@ -1,6 +1,6 @@
 #My custom Bash
 
-This is my customized terminal, inside contains; themes, scripts, configs, and more...
+This is my customized terminal, only for Mac OS X, inside contains; themes, scripts, configs, and more...
 
 ## Install
 
