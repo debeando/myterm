@@ -143,7 +143,7 @@ defaults write com.apple.iTunes disableRadio -bool true
 defaults write com.apple.terminal StringEncodings -array 4
 
 # Use a modified version of the Pro theme by default in Terminal.app
-open ~/.myterm/bash/theme/Solarized\ Dark\ ansi.terminal
+open ~/.myterm/bash/theme/Solarized\ Dark.terminal
 
 ###############################################################################
 # Time Machine                                                                #
@@ -159,7 +159,7 @@ hash tmutil &> /dev/null && sudo tmutil disablelocal
 # Kill affected applications                                                  #
 ###############################################################################
 
-for app in "Dashboard" "Dock" "Finder" "Safari" "SystemUIServer" "iTunes"; do
+for app in "Dashboard" "Finder" "Safari" "SystemUIServer" "iTunes"; do
 	killall "$app" > /dev/null 2>&1
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
