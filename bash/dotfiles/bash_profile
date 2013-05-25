@@ -12,6 +12,16 @@ if [ -f ~/.myterm/bash/scripts/ip.sh ]; then
   . ~/.myterm/bash/scripts/ip.sh
 fi
 
+# Include private scripts
+# -----------------------
+if [ -f ~/Dropbox/Private/Bash/alias.sh ]; then
+  . ~/Dropbox/Private/Bash/alias.sh
+fi
+
+if [ -f ~/Dropbox/Private/Bash/exports.sh ]; then
+  . ~/Dropbox/Private/Bash/exports.sh
+fi
+
 # Load Bash Completion
 # --------------------
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
