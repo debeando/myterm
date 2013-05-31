@@ -61,7 +61,7 @@ export EDITOR='vim'
 
 # don't put duplicate lines in the history
 # ----------------------------------------
-# export HISTCONTROL=ignoredups
+export HISTCONTROL=ignoredups
 
 # Set custom alias
 # ----------------
@@ -80,6 +80,8 @@ alias loadme='source ~/.bash_profile'
 # ------------------------
 alias gs='git status'
 alias gc='git commit'
+alias gp='git push'
+alias gup='git fetch && git pull'
 alias ga='git add'
 alias gd='git diff'
 alias gb='git branch'
