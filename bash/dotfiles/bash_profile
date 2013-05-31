@@ -113,5 +113,12 @@ alias newhosts='sudo vi /etc/hosts'
 alias los='sudo /usr/sbin/lsof -i -P'
 
 # Translate by Terminal
+# ---------------------
 alias es='export TLSOURCE=en TLTARGET=es && ~/.myterm/bash/scripts/translate.sh'
 alias en='export TLSOURCE=es TLTARGET=en && ~/.myterm/bash/scripts/translate.sh'
+
+# iTerm
+# -----
+name () {
+  export PROMPT_COMMAND="echo -ne '\033]0;$1\007'"
+}
