@@ -1,15 +1,15 @@
 # Include scripts
 # ---------------
-if [ -f ~/.myterm/bash/scripts/battery.sh ]; then
-  . ~/.myterm/bash/scripts/battery.sh
+if [ -f ~/.myterm/bash/scripts/bash_profile/battery.sh ]; then
+  . ~/.myterm/bash/scripts/bash_profile/battery.sh
 fi
 
-if [ -f ~/.myterm/bash/scripts/extract.sh ]; then
-  . ~/.myterm/bash/scripts/extract.sh
+if [ -f ~/.myterm/bash/scripts/bash_profile/extract.sh ]; then
+  . ~/.myterm/bash/scripts/bash_profile/extract.sh
 fi
 
-if [ -f ~/.myterm/bash/scripts/ip.sh ]; then
-  . ~/.myterm/bash/scripts/ip.sh
+if [ -f ~/.myterm/bash/scripts/bash_profile/ip.sh ]; then
+  . ~/.myterm/bash/scripts/bash_profile/ip.sh
 fi
 
 # Include private scripts
@@ -116,11 +116,11 @@ alias los='sudo /usr/sbin/lsof -i -P'
 
 # Translate by Terminal
 # ---------------------
-alias es='export TLSOURCE=en TLTARGET=es && ~/.myterm/bash/scripts/translate.sh'
-alias en='export TLSOURCE=es TLTARGET=en && ~/.myterm/bash/scripts/translate.sh'
+alias es='export TLSOURCE=en TLTARGET=es && ~/.myterm/bash/scripts/bash_profile/translate.sh'
+alias en='export TLSOURCE=es TLTARGET=en && ~/.myterm/bash/scripts/bash_profile/translate.sh'
 
 # iTerm
 # -----
-name () {
+name() {
   export PROMPT_COMMAND="echo -ne '\033]0;$1\007'"
 }

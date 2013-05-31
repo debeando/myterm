@@ -1,9 +1,9 @@
 #!/bin/bash
 
-#
+# ------------------------------------------------------------------------------
 # This script is my custom collection based on this other script:
 # https://raw.github.com/mathiasbynens/dotfiles/master/.osx
-#
+# ------------------------------------------------------------------------------
 
 # Ask for the administrator password upfront
 sudo -v
@@ -11,9 +11,9 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.osx` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-###############################################################################
-# General OS X                                                                #
-###############################################################################
+################################################################################
+# General OS X                                                                 #
+################################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
 sudo scutil --set ComputerName "nicola51980"
@@ -33,9 +33,9 @@ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
-###############################################################################
-# Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
-###############################################################################
+################################################################################
+# Trackpad, mouse, keyboard, Bluetooth accessories, and input                  #
+################################################################################
 
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
@@ -53,9 +53,9 @@ defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool true
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerHorizSwipeGesture -int 1
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -int 1
 
-###############################################################################
-# Finder                                                                      #
-###############################################################################
+################################################################################
+# Finder                                                                       #
+################################################################################
 
 # Finder: show status bar
 defaults write com.apple.finder ShowStatusBar -bool true
@@ -89,9 +89,9 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 # Empty Trash securely by default
 defaults write com.apple.finder EmptyTrashSecurely -bool true
 
-###############################################################################
-# Safari & WebKit                                                             #
-###############################################################################
+################################################################################
+# Safari & WebKit                                                              #
+################################################################################
 
 # Set Safari’s home page to `about:blank` for faster loading
 defaults write com.apple.Safari HomePage -string "about:blank"
@@ -122,9 +122,9 @@ defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 
-###############################################################################
-# iTunes (pre-iTunes 11 only)                                                 #
-###############################################################################
+################################################################################
+# iTunes (pre-iTunes 11 only)                                                  #
+################################################################################
 
 # Disable the iTunes store link arrows
 defaults write com.apple.iTunes show-store-link-arrows -bool false
@@ -135,9 +135,9 @@ defaults write com.apple.iTunes disableGeniusSidebar -bool true
 # Disable radio stations in iTunes
 defaults write com.apple.iTunes disableRadio -bool true
 
-###############################################################################
-# Terminal                                                                    #
-###############################################################################
+################################################################################
+# Terminal                                                                     #
+################################################################################
 
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
@@ -145,9 +145,9 @@ defaults write com.apple.terminal StringEncodings -array 4
 # Use a modified version of the Pro theme by default in Terminal.app
 open ~/.myterm/bash/theme/Solarized\ Dark.terminal
 
-###############################################################################
-# Time Machine                                                                #
-###############################################################################
+################################################################################
+# Time Machine                                                                 #
+################################################################################
 
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
@@ -155,9 +155,9 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 # Disable local Time Machine backups
 hash tmutil &> /dev/null && sudo tmutil disablelocal
 
-###############################################################################
-# Kill affected applications                                                  #
-###############################################################################
+################################################################################
+# Kill affected applications                                                   #
+################################################################################
 
 for app in "Dashboard" "Finder" "Safari" "SystemUIServer" "iTunes"; do
 	killall "$app" > /dev/null 2>&1
