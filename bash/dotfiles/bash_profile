@@ -34,6 +34,15 @@ parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
+# Enable 8bit input
+set input-meta on
+
+# Keep the 8th bit for display
+set output-meta on
+
+# Turns off 8th bit stripping
+set convert-meta off
+
 # Change colour of terminal by profile
 # ------------------------------------
 if [ -n "$BASH_VERSION" ]; then
