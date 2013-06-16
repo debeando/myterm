@@ -88,7 +88,7 @@ alias loadme='source ~/.bash_profile'
 # Set custom Alias for Git
 # ------------------------
 alias gs='git status'
-alias gc='git commit'
+alias gc='git commit -m'
 alias gp='git push'
 alias gup='git fetch && git pull'
 alias ga='git add'
@@ -104,10 +104,19 @@ alias gri='git rebase --interactive'
 alias gcp='git cherry-pick'
 alias grm='git rm'
 
+# Set custom Alias for Vagrant
+# ----------------------------
+alias vu='vagrant up'
+alias vd='vagrant destroy'
+alias vh='vagrant halt'
+alias vp='vagrant provision'
+alias vs='vagrant ssh'
+
 # Mac OS X
 # --------
 alias mydownloads="sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent'"
 alias cleardownloads="sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+alias cwd="pwd | pbcopy"
 
 # Mac OS X Wifi
 # -------------
