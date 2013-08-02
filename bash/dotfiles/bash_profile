@@ -53,6 +53,20 @@ if [ -n "$BASH_VERSION" ]; then
   export TERM="xterm-color"
 fi
 
+# Set Ruby Gem
+# ------------
+#export GEM_PATH=~/.gem
+#export GEM_HOME=~/.gem
+#export PATH="~/.gem/bin:$PATH"
+
+export RBENV_ROOT=/usr/local/var/rbenv
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)";
+fi
+
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
 # Add grep colors
 # ---------------
 export GREP_OPTIONS='--color=auto'
@@ -67,6 +81,10 @@ export LANGUAGE=en_US.UTF-8
 # Set editor
 # ----------
 export EDITOR='vim'
+
+# Open SublimeText
+# ----------------
+alias s='subl .'
 
 # don't put duplicate lines in the history
 # ----------------------------------------
@@ -84,6 +102,8 @@ alias t='tail -f'
 alias ..='cd ..'
 alias cd..='cd ..'
 alias loadme='source ~/.bash_profile'
+alias editprofile='subl ~/.bash_profile'
+alias sshkh='vim ~/.ssh/known_hosts'
 
 # Set custom Alias for Git
 # ------------------------
