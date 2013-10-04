@@ -32,6 +32,44 @@ ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /bin/subl
 ~/.myterm/configs/git.sh
 ~/.myterm/configs/osx.sh
 
+# Install packages.
+# =================
+
+which -s curl
+if [[ $? != 0 ]] ; then
+	brew install curl
+fi
+
+which -s nmap
+if [[ $? != 0 ]] ; then
+	brew install nmap
+fi
+
+which -s html2text
+if [[ $? != 0 ]] ; then
+	brew install html2text
+fi
+
+which -s js
+if [[ $? != 0 ]] ; then
+	brew install spidermonkey
+fi
+
+which -s mpg123
+if [[ $? != 0 ]] ; then
+	brew install mpg123
+fi
+
+which -s rsync
+if [[ $? != 0 ]] ; then
+	brew install rsync
+fi
+
+which -s wget
+if [[ $? != 0 ]] ; then
+	brew install wget
+fi
+
 # Reload profile.
 # ===============
 source ~/.bash_profile
