@@ -10,6 +10,10 @@ if [ -f ~/.inputrc ]; then
   unlink ~/.inputrc
 fi
 
+if [ -f ~/.vim ]; then
+  unlink ~/.vim
+fi
+
 if [ -f ~/.vimrc ]; then
   unlink ~/.vimrc
 fi
@@ -23,6 +27,7 @@ fi
 ln -s ~/.myterm/bash/dotfiles/bash_profile ~/.bash_profile
 ln -s ~/.myterm/bash/dotfiles/inputrc ~/.inputrc
 ln -s ~/.myterm/bash/dotfiles/vimrc ~/.vimrc
+ln -s ~/.myterm/bash/dotfiles/vim/ ~/.vim
 ln -s ~/.myterm/bash/dotfiles/gitignore_global ~/.gitignore_global
 ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /bin/subl
 

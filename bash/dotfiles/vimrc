@@ -1,10 +1,63 @@
-set nocompatible
-set nu
-set mouse=a
+execute pathogen#infect()
 
-set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set hidden                                                " don't unload buffer when switching away
+set modeline                                              " allow per-file settings via modeline
+set exrc                                                  " enable per-directory .vimrc files
+set secure                                                " disable unsafe commands in local .vimrc files
+set encoding=utf-8 fileencoding=utf-8 termencoding=utf-8  " saving and encoding
+set nobackup nowritebackup noswapfile autoread            " no backup or swap
+set hlsearch incsearch ignorecase smartcase               " search
+set wildmenu                                              " completion
+set backspace=indent,eol,start                            " sane backspace
+set clipboard=unnamedplus                                 " use the system clipboard for yank/put/delete
+set mouse=a                                               " enable mouse for all modes settings
+set nomousehide                                           " don't hide the mouse cursor while typing
+set mousemodel=popup                                      " right-click pops up context menu
+set ruler                                                 " show cursor position in status bar
+set relativenumber                                        " show relative line numbers
+set number                                                " show absolute line number of the current line
+set nofoldenable                                          " I fucking hate code folding
+set scrolloff=10                                          " scroll the window so we can always see 10 lines around the cursor
+set textwidth=80                                          " show a vertical line at the 79th character
+set cursorline                                            " highlight the current line
+" set cursorcolumn                                        " highlight the current line
+set printoptions=paper:letter                             " use letter as the print output format
+set laststatus=2                                          " always show status bar
+set nocompatible                                          " stops vim from behaving in a strongly vi
 
-syntax enable
+" Formatting
+filetype plugin indent on
+set shiftwidth=2 tabstop=2 softtabstop=2 expandtab autoindent
+
+" Appearance
+syntax on
+set background=dark
+set colorcolumn=80
+colorscheme solarized
+let g:solarized_termcolors = 256
+let g:solarized_termtrans  = 1
+let g:solarized_degrade    = 1
+let g:solarized_bold       = 0
+let g:solarized_underline  = 0
+let g:solarized_italic     = 0
+let g:solarized_contrast   = "high"
+let g:solarized_visibility = "high"
+set t_Co=16
+let &colorcolumn="80,".join(range(120,999),",")
+
+" Trim whitespace:
+match ErrorMsg '\s\+$'
+nnoremap <Leader>rtw :%s/\s\+$//e<CR>
+function! TrimWhiteSpace()
+  %s/\s\+$//e
+endfunction
+nnoremap <silent> <Leader>rts :call TrimWhiteSpace()<CR>
+autocmd FileWritePre    * :call TrimWhiteSpace()
+autocmd FileAppendPre   * :call TrimWhiteSpace()
+autocmd FilterWritePre  * :call TrimWhiteSpace()
+autocmd BufWritePre     * :call TrimWhiteSpace()
+
+" NERDTree
+let NERDTreeWinPos='right'
+map <C-n> :NERDTreeToggle<CR>
+
