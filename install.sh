@@ -22,15 +22,19 @@ if [ -f ~/.gitignore_global ]; then
   unlink ~/.gitignore_global
 fi
 
+if [ -f ~/.ssh/config ]; then
+  unlink ~/.ssh/config
+fi
+
 # Create link´s.
 # ===============
 ln -s ~/.myterm/bash/dotfiles/bash_profile ~/.bash_profile
 ln -s ~/.myterm/bash/dotfiles/inputrc ~/.inputrc
-ln -s ~/.myterm/bash/dotfiles/vimrc ~/.vimrc
 ln -s ~/.myterm/bash/dotfiles/vim/ ~/.vim
+ln -s ~/.myterm/bash/dotfiles/vimrc ~/.vimrc
+ln -s ~/.myterm/bash/dotfiles/ssh_config ~/.ssh/config
 ln -s ~/.myterm/bash/dotfiles/gitignore_global ~/.gitignore_global
 ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /bin/subl
-
 
 # Run several config commands.
 # ============================

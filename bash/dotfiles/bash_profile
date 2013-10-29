@@ -124,6 +124,10 @@ alias gri='git rebase --interactive'
 alias gcp='git cherry-pick'
 alias grm='git rm'
 
+# Install hooks for git
+# ---------------------
+alias git_install_pre_commit_puppet='ln -s ~/.myterm/bash/scripts/git/hooks/pre-commit.sh .git/hooks/pre-commit'
+
 # Set custom Alias for Vagrant
 # ----------------------------
 alias vu='vagrant up'
