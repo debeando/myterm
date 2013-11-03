@@ -26,10 +26,15 @@ if [ -f ~/.ssh/config ]; then
   unlink ~/.ssh/config
 fi
 
+if [ -f ~/.editrc ]; then
+  unlink ~/.editrc
+fi
+
 # Create link´s.
 # ===============
 ln -s ~/.myterm/bash/dotfiles/bash_profile ~/.bash_profile
 ln -s ~/.myterm/bash/dotfiles/inputrc ~/.inputrc
+ln -s ~/.myterm/bash/dotfiles/editrc ~/.editrc
 ln -s ~/.myterm/bash/dotfiles/vim/ ~/.vim
 ln -s ~/.myterm/bash/dotfiles/vimrc ~/.vimrc
 ln -s ~/.myterm/bash/dotfiles/ssh_config ~/.ssh/config

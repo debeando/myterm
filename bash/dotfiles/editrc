@@ -1,0 +1,5 @@
+bind "^W" ed-delete-prev-word
+bind "^U" vi-kill-line-prev
+bind "\e[1;6D" vi-prev-word
+bind "\e[1;6C" vi-next-word
+
