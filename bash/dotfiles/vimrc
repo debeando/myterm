@@ -42,7 +42,7 @@ let g:solarized_underline  = 0
 let g:solarized_italic     = 0
 let g:solarized_contrast   = "high"
 let g:solarized_visibility = "high"
-set t_Co=16
+set t_Co=256
 let &colorcolumn="80,".join(range(120,999),",")
 
 " Trim whitespace:
