@@ -57,8 +57,8 @@ set convert-meta off
 # Change colour of terminal by profile
 # ------------------------------------
 if [ -n "$BASH_VERSION" ]; then
-  export SUDO_PS1="\[\033[31m\]\u:\[\033[32m\]\w#\[\e[0m\] "
-  export PS1="\[\033[36m\]\u:\[\033[32m\]\w\[\033[36m\]\$(ruby_version)\[\033[31m\]\$(parse_git_branch)\[\033[32m\]\$\[\033[0m\] "
+  export SUDO_PS1="\[\033[31m\]\u:\[\033[32m\]\w\\$\[\033[0m\] "
+  export PS1="\[\033[36m\]\u:\[\033[32m\]\w\[\033[36m\]\$(ruby_version)\[\033[31m\]\$(parse_git_branch)\[\033[32m\]\\$\[\033[0m\] "
   export CLICOLOR=1
   export LSCOLORS=ExFxBxDxCxegedabagacad
   export TERM="xterm-color"
