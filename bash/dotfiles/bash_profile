@@ -34,6 +34,17 @@ parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
+# Get Ruby Versión
+# ----------------
+function ruby_version {
+  if [ -d .git ]; then
+    rbv=`rvm-prompt`
+    rbv=${rbv#ruby-}
+    [[ $rbv == *"@"* ]] || rbv="[${rbv:0:5}]"
+    echo $rbv
+  fi
+}
+
 # Enable 8bit input
 set input-meta on
 
@@ -47,7 +58,7 @@ set convert-meta off
 # ------------------------------------
 if [ -n "$BASH_VERSION" ]; then
   export SUDO_PS1="\[\033[31m\]\u:\[\033[32m\]\w#\[\e[0m\] "
-  export PS1="\[\033[36m\]\u:\[\033[32m\]\w\[\033[31m\]\$(parse_git_branch)\[\033[32m\]\$\[\e[0m\] "
+  export PS1="\[\033[36m\]\u:\[\033[32m\]\w\e[1;34m\$(ruby_version)\e[0;31m\$(parse_git_branch)\[\033[32m\]\$\[\e[0m\] "
   export CLICOLOR=1
   export LSCOLORS=ExFxBxDxCxegedabagacad
   export TERM="xterm-color"
