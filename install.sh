@@ -45,9 +45,22 @@ ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /bin/subl
 # ============================
 ~/.myterm/configs/git.sh
 ~/.myterm/configs/osx.sh
+~/.myterm/configs/st.sh
 
 # Install packages.
 # =================
+
+which -s brew
+if [[ $? != 0 ]] ; then
+  ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+  brew tap phinze/cask
+  brew install brew-cask
+fi
+
+which -s subl
+if [[ $? != 0 ]] ; then
+  brew cask install sublime-text
+fi
 
 which -s curl
 if [[ $? != 0 ]] ; then
