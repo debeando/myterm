@@ -177,3 +177,7 @@ alias en='export TLSOURCE=es TLTARGET=en && ~/.myterm/bash/scripts/bash_profile/
 name() {
   export PROMPT_COMMAND="echo -ne '\033]0;$1\007'"
 }
+
+# Homebrew
+# --------
+export PATH='/usr/local/sbin:$PATH' >>
