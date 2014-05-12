@@ -97,6 +97,66 @@ if [[ $? != 0 ]] ; then
 	brew install wget
 fi
 
+brew cask list | grep adium &> /dev/null
+if [ $? == 1 ] ; then
+  brew cask install --force adium
+fi
+
+brew cask list | grep alfred &> /dev/null
+if [ $? == 1 ] ; then
+  brew cask install --force alfred
+fi
+
+brew cask list | grep dropbox &> /dev/null
+if [ $? == 1 ] ; then
+  brew cask install --force dropbox
+fi
+
+brew cask list | grep evernote &> /dev/null
+if [ $? == 1 ] ; then
+  brew cask install --force evernote
+fi
+
+brew cask list | grep google-chrome &> /dev/null
+if [ $? == 1 ] ; then
+  brew cask install --force google-chrome
+fi
+
+brew cask list | grep hipchat &> /dev/null
+if [ $? == 1 ] ; then
+  brew cask install --force hipchat
+fi
+
+brew cask list | grep iterm2 &> /dev/null
+if [ $? == 1 ] ; then
+  brew cask install --force iterm2
+fi
+
+brew cask list | grep spectacle &> /dev/null
+if [ $? == 1 ] ; then
+  brew cask install --force spectacle
+fi
+
+brew cask list | grep sublime-text &> /dev/null
+if [ $? == 1 ] ; then
+  brew cask install --force sublime-text
+fi
+
+brew cask list | grep the-unarchiver &> /dev/null
+if [ $? == 1 ] ; then
+  brew cask install --force the-unarchiver
+fi
+
+brew cask list | grep tunnelblick &> /dev/null
+if [ $? == 1 ] ; then
+  brew cask install --force tunnelblick
+fi
+
+brew cask list | grep virtualbox &> /dev/null
+if [ $? == 1 ] ; then
+  brew cask install --force virtualbox
+fi
+
 # Reload profile.
 # ===============
 source ~/.bash_profile
