@@ -12,6 +12,10 @@ if [ -f ~/.myterm/bash/scripts/bash_profile/ip.sh ]; then
   . ~/.myterm/bash/scripts/bash_profile/ip.sh
 fi
 
+if [ -f ~/.myterm/bash/scripts/bash_profile/iterm.sh ]; then
+  . ~/.myterm/bash/scripts/bash_profile/iterm.sh
+fi
+
 # Include private scripts
 # -----------------------
 if [ -f ~/Dropbox/Private/Bash/alias.sh ]; then
@@ -171,9 +175,3 @@ alias los='sudo /usr/sbin/lsof -i -P'
 # ---------------------
 alias es='export TLSOURCE=en TLTARGET=es && ~/.myterm/bash/scripts/bash_profile/translate.sh'
 alias en='export TLSOURCE=es TLTARGET=en && ~/.myterm/bash/scripts/bash_profile/translate.sh'
-
-# iTerm
-# -----
-name() {
-  export PROMPT_COMMAND="echo -ne '\033]0;$1\007'"
-}
