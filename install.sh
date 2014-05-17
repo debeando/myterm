@@ -30,6 +30,10 @@ if [ -f ~/.editrc ]; then
   unlink ~/.editrc
 fi
 
+if [ -f ~/.tmux.conf ]; then
+  unlink ~/.tmux.conf
+fi
+
 # Create link´s.
 # ===============
 ln -s ~/.myterm/bash/dotfiles/bash_profile ~/.bash_profile
@@ -39,6 +43,7 @@ ln -s ~/.myterm/bash/dotfiles/vim/ ~/.vim
 ln -s ~/.myterm/bash/dotfiles/vimrc ~/.vimrc
 ln -s ~/.myterm/bash/dotfiles/ssh_config ~/.ssh/config
 ln -s ~/.myterm/bash/dotfiles/gitignore_global ~/.gitignore_global
+ln -s ~/.myterm/bash/dotfiles/tmux ~/.tmux.conf
 ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /bin/subl
 
 # Run several config commands.

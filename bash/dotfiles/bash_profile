@@ -65,7 +65,7 @@ if [ -n "$BASH_VERSION" ]; then
   export PS1="\[\033[36m\]\u:\[\033[32m\]\w\[\033[36m\]\$(ruby_version)\[\033[31m\]\$(parse_git_branch)\[\033[32m\]\\$\[\033[0m\] "
   export CLICOLOR=1
   export LSCOLORS=ExFxBxDxCxegedabagacad
-  export TERM="xterm-color"
+  export TERM="screen-256color-bce"
 fi
 
 # Set Ruby Gem
@@ -73,6 +73,10 @@ fi
 #export GEM_PATH=~/.gem
 #export GEM_HOME=~/.gem
 #export PATH="~/.gem/bin:$PATH"
+
+# Set AWS CLI
+# -----------
+export PATH="~/.myterm/bin/awsrds/bin:$PATH"
 
 export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then
