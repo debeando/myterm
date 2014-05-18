@@ -1,9 +1,5 @@
 # Include scripts
 # ---------------
-if [ -f ~/.myterm/bash/scripts/bash_profile/battery.sh ]; then
-  . ~/.myterm/bash/scripts/bash_profile/battery.sh
-fi
-
 if [ -f ~/.myterm/bash/scripts/bash_profile/extract.sh ]; then
   . ~/.myterm/bash/scripts/bash_profile/extract.sh
 fi
@@ -35,7 +31,7 @@ fi
 # Git branch in prompt
 # --------------------
 parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
 # Get Ruby Versión
