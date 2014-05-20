@@ -97,6 +97,11 @@ if [[ $? != 0 ]] ; then
 	brew install wget
 fi
 
+brew cask list | grep atom &> /dev/null
+if [ $? == 1 ] ; then
+  brew cask install --force atom
+fi
+
 brew cask list | grep adium &> /dev/null
 if [ $? == 1 ] ; then
   brew cask install --force adium
@@ -137,11 +142,6 @@ if [ $? == 1 ] ; then
   brew cask install --force spectacle
 fi
 
-brew cask list | grep sublime-text &> /dev/null
-if [ $? == 1 ] ; then
-  brew cask install --force sublime-text
-fi
-
 brew cask list | grep the-unarchiver &> /dev/null
 if [ $? == 1 ] ; then
   brew cask install --force the-unarchiver
@@ -150,6 +150,11 @@ fi
 brew cask list | grep tunnelblick &> /dev/null
 if [ $? == 1 ] ; then
   brew cask install --force tunnelblick
+fi
+
+brew cask list | grep transmission &> /dev/null
+if [ $? == 1 ] ; then
+  brew cask install --force transmission
 fi
 
 brew cask list | grep virtualbox &> /dev/null
