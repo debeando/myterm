@@ -10,4 +10,8 @@ fi
 ln -s ~/.myterm/configs/st2/settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
 
 # Install plugins:
-git clone git://github.com/henrikpersson/rsub.git
+git clone git://github.com/randy3k/AlignTab               ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/AlignTab
+git cline git://github.com/jisaacks/GitGutter.git         ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/GitGutter
+git clone git://github.com/henrikpersson/rsub.git         ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/rsub
+git clone git://github.com/eklein/sublime-text-puppet.git ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/sublime-text-puppet
+git clone git://github.com/kkga/spacegray.git             ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/spacegray
