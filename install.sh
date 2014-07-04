@@ -97,6 +97,11 @@ if [[ $? != 0 ]] ; then
 	brew install wget
 fi
 
+which -s bash-completion
+if [[ $? != 0 ]] ; then
+  brew install bash-completion
+fi
+
 brew cask list | grep atom &> /dev/null
 if [ $? == 1 ] ; then
   brew cask install --force atom
