@@ -64,37 +64,42 @@ fi
 
 which -s curl
 if [[ $? != 0 ]] ; then
-	brew install curl
+  brew install curl
 fi
 
 which -s nmap
 if [[ $? != 0 ]] ; then
-	brew install nmap
+  brew install nmap
+fi
+
+which -s multitail
+if [[ $? != 0 ]] ; then
+  brew install multitail
 fi
 
 which -s html2text
 if [[ $? != 0 ]] ; then
-	brew install html2text
+  brew install html2text
 fi
 
 which -s js
 if [[ $? != 0 ]] ; then
-	brew install spidermonkey
+  brew install spidermonkey
 fi
 
 which -s mpg123
 if [[ $? != 0 ]] ; then
-	brew install mpg123
+  brew install mpg123
 fi
 
 which -s rsync
 if [[ $? != 0 ]] ; then
-	brew install rsync
+  brew install rsync
 fi
 
 which -s wget
 if [[ $? != 0 ]] ; then
-	brew install wget
+  brew install wget
 fi
 
 which -s bash-completion
