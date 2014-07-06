@@ -64,12 +64,13 @@ which -s brew
 if [[ $? != 0 ]] ; then
   ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
   brew tap phinze/cask
+  brew tap caskroom/homebrew-versions
   brew install brew-cask
 fi
 
 which -s subl
 if [[ $? != 0 ]] ; then
-  brew cask install sublime-text
+  brew cask install sublime-text-3
 fi
 
 which -s curl
