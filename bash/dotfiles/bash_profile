@@ -12,6 +12,14 @@ if [ -f ~/.myterm/bash/scripts/bash_profile/iterm.sh ]; then
   . ~/.myterm/bash/scripts/bash_profile/iterm.sh
 fi
 
+if [ -f ~/.functions ]; then
+  . ~/.functions
+fi
+
+if [ -f ~/.aliases ]; then
+  . ~/.aliases
+fi
+
 # Include private scripts
 # -----------------------
 if [ -f ~/Dropbox/Private/Bash/alias.sh ]; then
