@@ -1,23 +1,23 @@
 {
-	"theme": "Spacegray Eighties.sublime-theme",
-	"color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme",
 	"auto_indent": true,
 	"auto_match_enabled": true,
 	"bold_folder_labels": true,
 	"caret_style": "phase",
 	"close_windows_when_empty": true,
+	"color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme",
 	"default_encoding": "UTF-8",
 	"detect_indentation": true,
+	"draw_white_space": "all",
 	"fade_fold_buttons": false,
 	"fallback_encoding": "UTF-8",
 	"fold_buttons": true,
-	"font_size": 14.0,
+	"font_size": 15.0,
 	"gutter": true,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-	        "Vintage"
+		"Vintage"
 	],
 	"indent_subsequent_lines": true,
 	"line_numbers": true,
@@ -32,14 +32,14 @@
 	"remember_open_files": true,
 	"rulers":
 	[
-	        80
+		80
 	],
 	"spell_check": false,
 	"tab_size": 2,
+	"theme": "Spacegray.sublime-theme",
 	"trailing_spaces_include_current_line": false,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
-	"draw_white_space": "all",
 	"use_tab_stops": true,
 	"word_separators": "./\\()\"'-:,.;<>~!@#%^&*|+=[]{}`~?",
 	"word_wrap": false

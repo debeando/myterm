@@ -1,61 +1,9 @@
 #!/bin/bash
 
-# Remove old link´s.
-# ===============
-if [ -f ~/.bash_profile ]; then
-  unlink ~/.bash_profile
-fi
+# Download first xcode CommandLineTools dropbox, signin and sync all, before run this script.
 
-if [ -f ~/.inputrc ]; then
-  unlink ~/.inputrc
-fi
-
-if [ -f ~/.aliases ]; then
-  unlink ~/.aliases
-fi
-
-if [ -f ~/.functions ]; then
-  unlink ~/.functions
-fi
-
-if [ -f ~/.vim ]; then
-  unlink ~/.vim
-fi
-
-if [ -f ~/.vimrc ]; then
-  unlink ~/.vimrc
-fi
-
-if [ -f ~/.gitignore_global ]; then
-  unlink ~/.gitignore_global
-fi
-
-if [ -f ~/.ssh/config ]; then
-  unlink ~/.ssh/config
-fi
-
-if [ -f ~/.editrc ]; then
-  unlink ~/.editrc
-fi
-
-# Create link´s.
-# ===============
-ln -s ~/.myterm/bash/dotfiles/bash_profile ~/.bash_profile
-ln -s ~/.myterm/bash/dotfiles/inputrc ~/.inputrc
-ln -s ~/.myterm/bash/dotfiles/aliases ~/.aliases
-ln -s ~/.myterm/bash/dotfiles/functions ~/.functions
-ln -s ~/.myterm/bash/dotfiles/editrc ~/.editrc
-ln -s ~/.myterm/bash/dotfiles/vim/ ~/.vim
-ln -s ~/.myterm/bash/dotfiles/vimrc ~/.vimrc
-ln -s ~/.myterm/bash/dotfiles/ssh_config ~/.ssh/config
-ln -s ~/.myterm/bash/dotfiles/gitignore_global ~/.gitignore_global
-ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /bin/subl
-
-# Run several config commands.
-# ============================
-~/.myterm/configs/git.sh
-~/.myterm/configs/osx.sh
-~/.myterm/configs/st.sh
+sudo xcode-select --install
+xcode-select --print-path
 
 # Install packages.
 # =================
@@ -68,9 +16,21 @@ if [[ $? != 0 ]] ; then
   brew install brew-cask
 fi
 
+which -s rbenv
+if [[ $? != 0 ]] ; then
+  brew install rbenv ruby-build
+  rbenv install 1.9.3-p448
+fi
+
+which -s rvm
+if [[ $? != 0 ]] ; then
+  curl -sSL https://get.rvm.io | bash -s stable --ruby
+  gem install rvm
+fi
+
 which -s subl
 if [[ $? != 0 ]] ; then
-  brew cask install sublime-text-3
+  brew cask install sublime-text3
 fi
 
 which -s curl
@@ -116,6 +76,21 @@ fi
 which -s bash-completion
 if [[ $? != 0 ]] ; then
   brew install bash-completion
+fi
+
+which -s s3cmd
+if [[ $? != 0 ]] ; then
+  brew install s3cmd
+fi
+
+which -s awscli
+if [[ $? != 0 ]] ; then
+  brew install awscli
+fi
+
+which -s
+if [[ $? != 0 ]] ; then
+  brew install percona-toolkit
 fi
 
 brew cask list | grep atom &> /dev/null
@@ -182,6 +157,80 @@ brew cask list | grep virtualbox &> /dev/null
 if [ $? == 1 ] ; then
   brew cask install --force virtualbox
 fi
+
+brew cask list | grep spotify &> /dev/null
+if [ $? == 1 ] ; then
+  brew cask install --force spotify
+fi
+
+brew cask list | grep vagrant &> /dev/null
+if [ $? == 1 ] ; then
+  brew cask install --force vagrant
+fi
+
+brew cask list | grep menumeters &> /dev/null
+if [ $? == 1 ] ; then
+  brew cask install --force menumeters
+fi
+
+vagrant box add wheezy64 ~/Dropbox/Downloads/vagrant-wheezy64-puppet.box
+
+# Remove old link´s.
+# ===============
+if [ -f ~/.bash_profile ]; then
+  unlink ~/.bash_profile
+fi
+
+if [ -f ~/.inputrc ]; then
+  unlink ~/.inputrc
+fi
+
+if [ -f ~/.aliases ]; then
+  unlink ~/.aliases
+fi
+
+if [ -f ~/.functions ]; then
+  unlink ~/.functions
+fi
+
+if [ -f ~/.vim ]; then
+  unlink ~/.vim
+fi
+
+if [ -f ~/.vimrc ]; then
+  unlink ~/.vimrc
+fi
+
+if [ -f ~/.gitignore_global ]; then
+  unlink ~/.gitignore_global
+fi
+
+if [ -f ~/.ssh/config ]; then
+  unlink ~/.ssh/config
+fi
+
+if [ -f ~/.editrc ]; then
+  unlink ~/.editrc
+fi
+
+# Create link´s.
+# ===============
+ln -s ~/.myterm/bash/dotfiles/bash_profile ~/.bash_profile
+ln -s ~/.myterm/bash/dotfiles/inputrc ~/.inputrc
+ln -s ~/.myterm/bash/dotfiles/aliases ~/.aliases
+ln -s ~/.myterm/bash/dotfiles/functions ~/.functions
+ln -s ~/.myterm/bash/dotfiles/editrc ~/.editrc
+ln -s ~/.myterm/bash/dotfiles/vim/ ~/.vim
+ln -s ~/.myterm/bash/dotfiles/vimrc ~/.vimrc
+ln -s ~/.myterm/bash/dotfiles/ssh_config ~/.ssh/config
+ln -s ~/.myterm/bash/dotfiles/gitignore_global ~/.gitignore_global
+ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /bin/subl
+
+# Run several config commands.
+# ============================
+~/.myterm/configs/git.sh
+~/.myterm/configs/osx.sh
+~/.myterm/configs/st.sh
 
 # Reload profile.
 # ===============

@@ -44,10 +44,17 @@ parse_git_branch() {
 
 # Get Ruby Versión
 # ----------------
+export RBENV_ROOT=/usr/local/var/rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)";
+  rbenv local 1.9.3-p448
+fi
+
 function ruby_version {
   if [ -d .git ]; then
-    rbv=`rvm-prompt`
-    rbv=${rbv#ruby-}
+    rbv=`rbenv version`
     [[ $rbv == *"@"* ]] || rbv="[${rbv:0:5}]"
     echo $rbv
   fi
@@ -78,23 +85,9 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
-# Set Ruby Gem
-# ------------
-#export GEM_PATH=~/.gem
-#export GEM_HOME=~/.gem
-#export PATH="~/.gem/bin:$PATH"
-
 # Set AWS CLI
 # -----------
 export PATH="~/.myterm/bin/awsrds/bin:$PATH"
-
-export RBENV_ROOT=/usr/local/var/rbenv
-if which rbenv > /dev/null; then
-  eval "$(rbenv init -)";
-fi
-
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # Add grep colors
 # ---------------
