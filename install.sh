@@ -213,9 +213,16 @@ if [ -f ~/.editrc ]; then
   unlink ~/.editrc
 fi
 
-# Install gem`s.
+# Install gem's.
 # ==============
-gem install termit
+if [ ! gem list termit -i ]; then
+  gem install termit
+fi
+
+if [ ! gem lis ghost -i ]; then
+  gem install ghost
+  sudo gem install ghost
+fi
 
 # Create link´s.
 # ===============
