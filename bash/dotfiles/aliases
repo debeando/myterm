@@ -72,5 +72,6 @@ alias los='sudo /usr/sbin/lsof -i -P'
 
 # Translate by Terminal
 # ---------------------
-alias es='export TLSOURCE=en TLTARGET=es && ~/.myterm/bash/scripts/bash_profile/translate.sh'
-alias en='export TLSOURCE=es TLTARGET=en && ~/.myterm/bash/scripts/bash_profile/translate.sh'
+alias es='termit en es'
+alias en='termit es en'
+alias it='termit es it'

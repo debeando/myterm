@@ -213,6 +213,10 @@ if [ -f ~/.editrc ]; then
   unlink ~/.editrc
 fi
 
+# Install gem`s.
+# ==============
+gem install termit
+
 # Create link´s.
 # ===============
 ln -s ~/.myterm/bash/dotfiles/bash_profile ~/.bash_profile
