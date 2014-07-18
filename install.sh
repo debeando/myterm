@@ -88,9 +88,14 @@ if [[ $? != 0 ]] ; then
   brew install awscli
 fi
 
-which -s
+which -s percona-toolkit
 if [[ $? != 0 ]] ; then
   brew install percona-toolkit
+fi
+
+which -s sysbench
+if [[ $? != 0 ]] ; then
+  brew install sysbench
 fi
 
 brew cask list | grep atom &> /dev/null
