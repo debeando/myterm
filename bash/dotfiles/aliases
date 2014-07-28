@@ -1,13 +1,10 @@
-# Open SublimeText
-# ----------------
-alias s='subl .'
-
 # don't put duplicate lines in the history
 # ----------------------------------------
 export HISTCONTROL=ignoredups
 
 # Set custom alias
 # ----------------
+alias a='atom'
 alias l='ls'
 alias ll='ls -lahGF'
 alias h='history'

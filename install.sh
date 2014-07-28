@@ -28,11 +28,6 @@ if [[ $? != 0 ]] ; then
   gem install rvm
 fi
 
-which -s subl
-if [[ $? != 0 ]] ; then
-  brew cask install sublime-text3
-fi
-
 which -s curl
 if [[ $? != 0 ]] ; then
   brew install curl
@@ -242,7 +237,6 @@ ln -s ~/.myterm/bash/dotfiles/vim/ ~/.vim
 ln -s ~/.myterm/bash/dotfiles/vimrc ~/.vimrc
 ln -s ~/.myterm/bash/dotfiles/ssh_config ~/.ssh/config
 ln -s ~/.myterm/bash/dotfiles/gitignore_global ~/.gitignore_global
-ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /bin/subl
 
 # Run several config commands.
 # ============================
