@@ -22,6 +22,7 @@ alias sshkh='atom ~/.ssh/known_hosts'
 # Set custom Alias for Git
 # ------------------------
 alias g='git'
+alias gp='git pull'
 alias gs='git status'
 alias gc='git commit'
 alias ga='git add'
@@ -54,9 +55,7 @@ alias vs='vagrant ssh'
 alias mydownloads="sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent'"
 alias cleardownloads="sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
 alias cwd="pwd | pbcopy"
-
-# Mac OS X Wifi
-# -------------
+alias lock="/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine"
 alias wifion="networksetup -setairportpower en1 on"
 alias wifioff="networksetup -setairportpower en1 off"
 
