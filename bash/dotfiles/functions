@@ -14,3 +14,57 @@ gitremovebranch() {
 function mkd() {
     mkdir -p "$@" && cd "$@"
 }
+
+# Connect to server by SSH and use KEY and color tab:
+serconn() {
+  # Define los colores del tab dependiendo del host:
+  case "$1" in
+    *deploy*) tab-color 000 255 000;; # Verde
+    *root*)   tab-color 255 000 000;; # Rojo
+    *)        tab-color 255 128 000;; # Naranja
+  esac
+
+  # Define el nombre del tab:
+  echo -ne "\033]0;${2%%.*}\007"
+
+  # Realiza la conexión a MySQL:
+  ssh -t -i $SSH_KEY $1@$2 $3
+
+  # Remueve el color del tab:
+  tab-reset
+
+  # Remueve el nombre del tab:
+  echo -ne "\033]0;\007"
+}
+
+dbtun() {
+  # Set color by hostname:
+  case "$1" in
+    *dev*master*)     tab-color 255 128 000;; # Naranja
+    *dev*slave*)      tab-color 000 255 000;; # Verde
+    *prod*master*)    tab-color 255 000 000;; # Rojo
+    *prod*slave*)     tab-color 000 255 000;; # Verde
+    *prod*reporting*) tab-color 000 255 000;; # Verde
+  esac
+
+  # Set tab color and name:
+  echo -ne "\033]0;${1%%.*}\007"
+
+  # Connect by SSH to mysql:
+  ssh -t -i $SSH_KEY \
+      $4@$5 \
+      "mysql -h ${1} -u ${2} -p${3}"
+
+  # Remove tab color:
+  tab-reset
+
+  # Remove tab name:
+  echo -ne "\033]0;\007"
+}
+
+dbport() {
+  # Connect by SSH to mysql:
+  ssh -t -i $SSH_KEY \
+      $1@$2 \
+      -L 3306:$1:3306
+}

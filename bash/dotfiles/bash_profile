@@ -90,9 +90,29 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
-# Set AWS CLI
-# -----------
-export PATH="~/.myterm/bin/awsrds/bin:$PATH"
+# Global Variables for Amazon AWS
+# -------------------------------
+export JAVA_HOME=$(/usr/libexec/java_home)
+export RDS_URL=https://rds.eu-west-1.amazonaws.com
+export EC2_URL=https://ec2.eu-west-1.amazonaws.com
+export EC2_REGION=eu-west-1
+export AWS_EC2_REGION=eu-west-1
+export AWS_EC2_HOME=/usr/local/aws/ec2
+export AWS_RDS_HOME=/usr/local/aws/rds
+export AWS_CW_HOME=/usr/local/aws/cw
+export AWS_CLOUDWATCH_HOME=$AWS_CW_HOME
+export AWS_CLOUDWATCH_URL=https://monitoring.eu-west-1.amazonaws.com
+
+# Path's
+# ------
+export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/local/mysql/bin
+export PATH=$PATH:/usr/local/bin/s3cmd
+export PATH=$PATH:/usr/local/heroku/bin
+export PATH=$PATH:$AWS_EC2_HOME/bin
+export PATH=$PATH:$AWS_RDS_HOME/bin
+export PATH=$PATH:$AWS_CW_HOME/bin
 
 # Add grep colors
 # ---------------
