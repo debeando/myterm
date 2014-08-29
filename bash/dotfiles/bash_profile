@@ -1,17 +1,5 @@
 # Include scripts
 # ---------------
-if [ -f ~/.myterm/bash/scripts/bash_profile/extract.sh ]; then
-  . ~/.myterm/bash/scripts/bash_profile/extract.sh
-fi
-
-if [ -f ~/.myterm/bash/scripts/bash_profile/ip.sh ]; then
-  . ~/.myterm/bash/scripts/bash_profile/ip.sh
-fi
-
-if [ -f ~/.myterm/bash/scripts/bash_profile/iterm.sh ]; then
-  . ~/.myterm/bash/scripts/bash_profile/iterm.sh
-fi
-
 if [ -f ~/.functions ]; then
   . ~/.functions
 fi
