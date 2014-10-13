@@ -33,7 +33,6 @@ set shiftwidth=2 tabstop=2 softtabstop=2 expandtab autoindent
 syntax on
 set background=dark
 set colorcolumn=80
-colorscheme solarized
 let g:solarized_termcolors = 256
 let g:solarized_termtrans  = 1
 let g:solarized_degrade    = 1
@@ -43,9 +42,14 @@ let g:solarized_italic     = 0
 let g:solarized_contrast   = "high"
 let g:solarized_visibility = "high"
 set t_Co=256
-let &colorcolumn="80,".join(range(120,999),",")
 
-" Trim whitespace:
+" Custom theme
+let &colorcolumn=join(range(81,999),",")
+let &colorcolumn="80,".join(range(120,999),",")
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+highlight LineNr ctermfg=grey ctermbg=black
+
+" Trim whitespace
 match ErrorMsg '\s\+$'
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 function! TrimWhiteSpace()
@@ -60,4 +64,3 @@ autocmd BufWritePre     * :call TrimWhiteSpace()
 " NERDTree
 let NERDTreeWinPos='right'
 map <C-n> :NERDTreeToggle<CR>
-
