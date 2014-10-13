@@ -242,7 +242,7 @@ ln -s ~/.myterm/bash/dotfiles/gitignore_global ~/.gitignore_global
 # ============================
 ~/.myterm/configs/git.sh
 ~/.myterm/configs/osx.sh
-~/.myterm/configs/st.sh
+~/.myterm/configs/atom.sh
 
 # Reload profile.
 # ===============

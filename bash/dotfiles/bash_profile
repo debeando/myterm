@@ -116,3 +116,5 @@ export LANGUAGE=en_US.UTF-8
 # Set editor
 # ----------
 export EDITOR='vim'
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

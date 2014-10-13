@@ -1,0 +1,9 @@
+apm install atom-alignment
+apm install atom-lint
+apm install file-icons
+apm install format-sql
+apm install language-puppet
+apm install markdown-format
+apm install merge-conflicts
+apm install highlight-line
+apm install space-tab
