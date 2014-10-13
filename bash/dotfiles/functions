@@ -127,3 +127,35 @@ defile () {
     openssl enc -d -des3 -in ${filename}.enc -out $filename
   fi
 }
+
+# Convert bytes to Human Readable:
+# --------------------------------
+b2h() {
+    SLIST="bytes,KB,MB,GB,TB,PB,EB,ZB,YB"
+
+    POWER=1
+    VAL=$( echo "scale=2; $1 / 1" | bc)
+    VINT=$( echo $VAL / 1024 | bc )
+    while [ ! $VINT = "0" ]
+    do
+        let POWER=POWER+1
+        VAL=$( echo "scale=2; $VAL / 1024" | bc)
+        VINT=$( echo $VAL / 1024 | bc )
+    done
+
+    echo $VAL$( echo $SLIST | cut -f$POWER -d, )
+}
+
+k2h() {
+    SLIST="bytes,KB,MB,GB,TB,PB,EB,ZB,YB"
+    POWER=1
+    VAL=$( echo "scale=2; $1 * 1024 / 1" | bc)
+    VINT=$( echo $VAL / 1024 | bc )
+    while [ ! $VINT = "0" ]
+    do
+        let POWER=POWER+1
+        VAL=$( echo "scale=2; $VAL / 1024" | bc)
+        VINT=$( echo $VAL / 1024 | bc )
+    done
+    echo $VAL$( echo $SLIST | cut -f$POWER -d, )
+}
