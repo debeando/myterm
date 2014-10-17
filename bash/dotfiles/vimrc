@@ -1,29 +1,28 @@
-execute pathogen#infect()
+" execute pathogen#infect()
 
-set hidden                                                " don't unload buffer when switching away
-set modeline                                              " allow per-file settings via modeline
-set exrc                                                  " enable per-directory .vimrc files
-set secure                                                " disable unsafe commands in local .vimrc files
-set encoding=utf-8 fileencoding=utf-8 termencoding=utf-8  " saving and encoding
-set nobackup nowritebackup noswapfile autoread            " no backup or swap
-set hlsearch incsearch ignorecase smartcase               " search
-set wildmenu                                              " completion
-set backspace=indent,eol,start                            " sane backspace
-set clipboard=unnamedplus                                 " use the system clipboard for yank/put/delete
-set mouse=a                                               " enable mouse for all modes settings
-set nomousehide                                           " don't hide the mouse cursor while typing
-set mousemodel=popup                                      " right-click pops up context menu
-set ruler                                                 " show cursor position in status bar
-set relativenumber                                        " show relative line numbers
-set number                                                " show absolute line number of the current line
-set nofoldenable                                          " I fucking hate code folding
-set scrolloff=10                                          " scroll the window so we can always see 10 lines around the cursor
-set textwidth=80                                          " show a vertical line at the 79th character
-set cursorline                                            " highlight the current line
-" set cursorcolumn                                        " highlight the current line
-set printoptions=paper:letter                             " use letter as the print output format
-set laststatus=2                                          " always show status bar
-set nocompatible                                          " stops vim from behaving in a strongly vi
+set hidden                                                                      " don't unload buffer when switching away
+set modeline                                                                    " allow per-file settings via modeline
+set exrc                                                                        " enable per-directory .vimrc files
+set secure                                                                      " disable unsafe commands in local .vimrc files
+set encoding=utf-8 fileencoding=utf-8 termencoding=utf-8                        " saving and encoding
+set nobackup nowritebackup noswapfile autoread                                  " no backup or swap
+set hlsearch incsearch ignorecase smartcase                                     " search
+set wildmenu                                                                    " completion
+set backspace=indent,eol,start                                                  " sane backspace
+set clipboard=unnamedplus                                                       " use the system clipboard for yank/put/delete
+set mouse=a                                                                     " enable mouse for all modes settings
+set nomousehide                                                                 " don't hide the mouse cursor while typing
+set mousemodel=popup                                                            " right-click pops up context menu
+set ruler                                                                       " show cursor position in status bar
+set relativenumber                                                              " show relative line numbers
+set number                                                                      " show absolute line number of the current line
+set nofoldenable                                                                " I fucking hate code folding
+set scrolloff=10                                                                " scroll the window so we can always see 10 lines around the cursor
+set textwidth=80                                                                " show a vertical line at the 79th character
+set cursorline                                                                  " highlight the current line
+set printoptions=paper:letter                                                   " use letter as the print output format
+set laststatus=2                                                                " always show status bar
+set nocompatible                                                                " stops vim from behaving in a strongly vi
 
 " Formatting
 filetype plugin indent on
@@ -33,21 +32,47 @@ set shiftwidth=2 tabstop=2 softtabstop=2 expandtab autoindent
 syntax on
 set background=dark
 set colorcolumn=80
-let g:solarized_termcolors = 256
-let g:solarized_termtrans  = 1
-let g:solarized_degrade    = 1
-let g:solarized_bold       = 0
-let g:solarized_underline  = 0
-let g:solarized_italic     = 0
-let g:solarized_contrast   = "high"
-let g:solarized_visibility = "high"
 set t_Co=256
 
 " Custom theme
+highlight clear
+
+hi Cursor       ctermbg=100
+
+
 let &colorcolumn=join(range(81,999),",")
 let &colorcolumn="80,".join(range(120,999),",")
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
-highlight LineNr ctermfg=grey ctermbg=black
+highlight ColorColumn ctermbg=235 ctermfg=245 cterm=NONE
+highlight CursorLine  ctermbg=240 ctermfg=255 cterm=NONE
+highlight LineNr      ctermbg=235 ctermfg=250 cterm=NONE
+highlight SpecialKey  ctermbg=0   ctermfg=255 cterm=NONE
+highlight NonText     ctermbg=0   ctermfg=236 cterm=NONE
+
+
+set listchars=tab:»\ ,trail:·,extends:»,precedes:«,eol:¬
+set cursorline
+set list
+
+" Status line
+highlight User1 ctermfg=0   ctermbg=214 cterm=NONE
+highlight User2 ctermfg=0   ctermbg=214 cterm=NONE
+highlight User3 ctermfg=0   ctermbg=214 cterm=NONE
+
+set statusline=
+set statusline+=%1*                                                             " Switch to colour User1
+set statusline+=[%n]                                                            " Buffer number
+set statusline+=%2*                                                             " Set color
+set statusline+=%f                                                              " Path to the file
+set statusline+=%y                                                              " File Type
+set statusline+=[%{''.(&fenc!=''?&fenc:&enc).''}                                " Encoding
+set statusline+=\|                                                              " Separator
+set statusline+=%{&ff}]                                                         " FileFormat (dos/unix..)
+set statusline+=%=                                                              " Switch to the right side
+set statusline+=%8*\ L:                                                         " Separator
+set statusline+=%l                                                              " Current line
+set statusline+=/                                                               " Separator
+set statusline+=%L                                                              " Total lines
+set statusline+=%9*\ C:%03c\                                                    " Current column
 
 " Trim whitespace
 match ErrorMsg '\s\+$'
@@ -64,3 +89,4 @@ autocmd BufWritePre     * :call TrimWhiteSpace()
 " NERDTree
 let NERDTreeWinPos='right'
 map <C-n> :NERDTreeToggle<CR>
+
