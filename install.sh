@@ -189,10 +189,6 @@ if [ -f ~/.functions ]; then
   unlink ~/.functions
 fi
 
-if [ -f ~/.vim ]; then
-  unlink ~/.vim
-fi
-
 if [ -f ~/.vimrc ]; then
   unlink ~/.vimrc
 fi
@@ -227,7 +223,6 @@ ln -s ~/.myterm/bash/dotfiles/inputrc ~/.inputrc
 ln -s ~/.myterm/bash/dotfiles/aliases ~/.aliases
 ln -s ~/.myterm/bash/dotfiles/functions ~/.functions
 ln -s ~/.myterm/bash/dotfiles/editrc ~/.editrc
-ln -s ~/.myterm/bash/dotfiles/vim/ ~/.vim
 ln -s ~/.myterm/bash/dotfiles/vimrc ~/.vimrc
 ln -s ~/.myterm/bash/dotfiles/ssh_config ~/.ssh/config
 ln -s ~/.myterm/bash/dotfiles/gitignore_global ~/.gitignore_global
