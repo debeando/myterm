@@ -113,11 +113,6 @@ if [ $? == 1 ] ; then
   brew cask install --force dropbox
 fi
 
-brew cask list | grep evernote &> /dev/null
-if [ $? == 1 ] ; then
-  brew cask install --force evernote
-fi
-
 brew cask list | grep google-chrome &> /dev/null
 if [ $? == 1 ] ; then
   brew cask install --force google-chrome
