@@ -162,6 +162,11 @@ if [ $? == 1 ] ; then
   brew cask install --force menumeters
 fi
 
+brew cask list | grep transmission &> /dev/null
+if [ $? == 1 ] ; then
+  brew cask install --force transmission
+fi
+
 if [ ! -f ~/.git-completion.bash ]; then
   wget -O ~/.git-completion.bash https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
 fi
