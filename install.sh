@@ -19,13 +19,7 @@ fi
 which -s rbenv
 if [[ $? != 0 ]] ; then
   brew install rbenv ruby-build
-  rbenv install 1.9.3-p448
-fi
-
-which -s rvm
-if [[ $? != 0 ]] ; then
-  curl -sSL https://get.rvm.io | bash -s stable --ruby
-  gem install rvm
+  rbenv install 2.1.2
 fi
 
 which -s curl
