@@ -41,6 +41,9 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 # Disable bell sound
 set bell-style off
 
+# Enable shortcut key for dark menu and dock.
+sudo defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableThemeSwitchHotKey -bool true
+
 ################################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                  #
 ################################################################################
