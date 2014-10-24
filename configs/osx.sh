@@ -15,11 +15,16 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # General OS X                                                                 #
 ################################################################################
 
+echo "Mac OS X Config"
+echo "---------------"
+echo "Please enter your host name: "
+read hostname
+
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "nicola51980"
-sudo scutil --set HostName "nicola51980"
-sudo scutil --set LocalHostName "nicola51980"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "nicola51980"
+sudo scutil --set ComputerName $hostname
+sudo scutil --set HostName $hostname
+sudo scutil --set LocalHostName $hostname
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $hostname
 
 # Set the timezone; see `systemsetup -listtimezones` for other values
 systemsetup -settimezone "Europe/Madrid" > /dev/null
