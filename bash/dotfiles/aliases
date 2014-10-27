@@ -6,6 +6,7 @@ export HISTCONTROL=ignoredups
 
 # Set custom alias
 # ----------------
+alias rm='mv ~/.Trash/'
 alias a='atom'
 alias l='ls'
 alias ll='ls -lahGF'
