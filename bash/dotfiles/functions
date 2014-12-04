@@ -1,3 +1,8 @@
+# Copy last command into clipboard, only work in Mac OS X.
+clc() {
+  history -p '!!' | tr -d \\n | pbcopy;
+}
+
 gitnewbranch() {
   git branch $1
   git push -u origin $1
