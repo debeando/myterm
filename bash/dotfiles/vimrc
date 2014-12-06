@@ -1,4 +1,3 @@
-execute pathogen#infect()
 
 " Global settings
 set hidden                                                                                                              " don't unload buffer when switching away
@@ -44,7 +43,6 @@ syntax reset
 
 set list
 set listchars=tab:»\ ,trail:·,extends:»,precedes:«,eol:¬
-set cursorline
 
 let &colorcolumn="121,".join(range(121,999),",")                                                                        " Background after vertical line.
 
