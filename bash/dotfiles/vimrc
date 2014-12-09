@@ -1,5 +1,3 @@
-execute pathogen#infect()
-
 " Global settings
 set hidden                                                                                                              " don't unload buffer when switching away
 set modeline                                                                                                            " allow per-file settings via modeline
@@ -40,7 +38,7 @@ set t_Co=256
 
 " Custom theme
 highlight clear
-syntax reset
+" syntax reset
 
 set list
 set listchars=tab:»\ ,trail:·,extends:»,precedes:«,eol:¬
@@ -54,7 +52,6 @@ highlight CursorLineNr ctermbg=240             cterm=NONE
 highlight LineNr       ctermbg=235 ctermfg=250 cterm=NONE
 highlight SpecialKey   ctermbg=0   ctermfg=255 cterm=NONE
 highlight NonText      ctermbg=0   ctermfg=236 cterm=NONE
-
 
 " Status line
 highlight User1 ctermfg=0   ctermbg=214 cterm=NONE
@@ -76,6 +73,7 @@ set statusline+=%l                                                              
 set statusline+=/                                                                                                       " Separator
 set statusline+=%L                                                                                                      " Total lines
 set statusline+=%9*\ C:%03c\                                                                                            " Current column
+set statusline+=%{GitBranch()}
 
 " Trim whitespace
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
@@ -87,6 +85,13 @@ autocmd FileWritePre    * :call TrimWhiteSpace()
 autocmd FileAppendPre   * :call TrimWhiteSpace()
 autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
+
+" Git
+function! GitBranch()
+  return system("git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/\(.*\)/(\1)/'")
+endfunction
+
+
 
 " Key map
 let mapleader = ","
