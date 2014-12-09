@@ -27,6 +27,11 @@ if [[ $? != 0 ]] ; then
   brew install curl
 fi
 
+which -s grc
+if [[ $? != 0 ]] ; then
+  brew install grc
+fi
+
 which -s nmap
 if [[ $? != 0 ]] ; then
   brew install nmap
@@ -205,6 +210,14 @@ if [ -f ~/.editrc ]; then
   unlink ~/.editrc
 fi
 
+if [ -f ~/.grcat ]; then
+  unlink ~/.grcat
+fi
+
+if [ -f ~/.my.cnf ]; then
+  unlink ~/.my.cnf
+fi
+
 # Install gem's.
 # ==============
 if [ ! gem list termit -i ]; then
@@ -224,6 +237,8 @@ ln -s ~/.myterm/bash/dotfiles/aliases ~/.aliases
 ln -s ~/.myterm/bash/dotfiles/functions ~/.functions
 ln -s ~/.myterm/bash/dotfiles/editrc ~/.editrc
 ln -s ~/.myterm/bash/dotfiles/vimrc ~/.vimrc
+ln -s ~/.myterm/bash/dotfiles/grcat ~/.grcat
+ln -s ~/.myterm/bash/dotfiles/my.cnf ~/.my.cnf
 ln -s ~/.myterm/bash/dotfiles/ssh_config ~/.ssh/config
 ln -s ~/.myterm/bash/dotfiles/gitignore_global ~/.gitignore_global
 
