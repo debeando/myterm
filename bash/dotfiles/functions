@@ -1,3 +1,9 @@
+# Include scripts
+# ---------------
+if [ -f ~/.myterm/bash/scripts/bash_profile/ip.sh ]; then
+  . ~/.myterm/bash/scripts/bash_profile/ip.sh
+fi
+
 # Copy last command into clipboard, only work in Mac OS X.
 clc() {
   history -p '!!' | tr -d \\n | pbcopy;
