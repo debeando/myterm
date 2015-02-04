@@ -93,7 +93,7 @@ set-window-option -g clock-mode-colour colour40 #green
 
 # Set info
 # --------
-set-option -g status-right '#[bold] ⡇ #(~/.myterm/bash/scripts/tmux/battery.sh) ⡇ %Y-%m-%d %H:%M '
+set-option -g status-right '#[bold] ⡇ #(~/.myterm/bash/scripts/battery) ⡇ %Y-%m-%d %H:%M '
 
 set-option -g status-right-length 60
 set-option -g status-left-length 60

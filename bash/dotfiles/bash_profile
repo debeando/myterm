@@ -101,6 +101,7 @@ export PATH=$PATH:/usr/local/heroku/bin
 export PATH=$PATH:$AWS_EC2_HOME/bin
 export PATH=$PATH:$AWS_RDS_HOME/bin
 export PATH=$PATH:$AWS_CW_HOME/bin
+export PATH=$PATH:~/.myterm/bash/scripts
 
 # Add grep colors
 # ---------------

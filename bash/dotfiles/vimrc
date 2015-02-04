@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> c9239b5a11317cd626ec81b9eefcd66b43ff74ed
 " Global settings
 set hidden                                                                                                              " don't unload buffer when switching away
 set modeline                                                                                                            " allow per-file settings via modeline
@@ -12,7 +8,7 @@ set nobackup nowritebackup noswapfile autoread                                  
 set hlsearch incsearch ignorecase smartcase                                                                             " search
 set wildmenu                                                                                                            " completion
 set backspace=indent,eol,start                                                                                          " sane backspace
-set clipboard=unnamedplus                                                                                               " use the system clipboard for yank/put/delete
+set clipboard=unnamed                                                                                                   " use the system clipboard for yank/put/delete
 set mouse=a                                                                                                             " enable mouse for all modes settings
 set nomousehide                                                                                                         " don't hide the mouse cursor while typing
 set mousemodel=popup                                                                                                    " right-click pops up context menu
