@@ -25,6 +25,8 @@ set nocompatible                                                                
 set nowrap                                                                                                              " no wrap line
 set visualbell                                                                                                          " don't beep
 set noerrorbells                                                                                                        " don't beep
+set nosmartindent
+set noautoindent
 
 " Formatting
 filetype plugin indent on
