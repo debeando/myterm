@@ -238,6 +238,7 @@ ln -s ~/.myterm/bash/dotfiles/functions ~/.functions
 ln -s ~/.myterm/bash/dotfiles/editrc ~/.editrc
 ln -s ~/.myterm/bash/dotfiles/vimrc ~/.vimrc
 ln -s ~/.myterm/bash/dotfiles/grcat ~/.grcat
+ln -s ~/.myterm/bash/dotfiles/gemrc ~/.gemrc
 ln -s ~/.myterm/bash/dotfiles/my.cnf ~/.my.cnf
 ln -s ~/.myterm/bash/dotfiles/ssh_config ~/.ssh/config
 ln -s ~/.myterm/bash/dotfiles/gitignore_global ~/.gitignore_global
