@@ -18,8 +18,9 @@ alias t='tail -f'
 alias ..='cd ..'
 alias cd..='cd ..'
 alias loadme='source ~/.bash_profile'
-alias editprofile='atom ~/.bash_profile'
-alias sshkh='atom ~/.ssh/known_hosts'
+alias editprofile='vim ~/.bash_profile'
+alias sshkh='vim ~/.ssh/known_hosts'
+alias ssh='ssh -o StrictHostKeyChecking=no -A'
 
 # Set custom Alias for Git
 # ------------------------
