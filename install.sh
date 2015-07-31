@@ -11,9 +11,6 @@ xcode-select --print-path
 which -s brew
 if [[ $? != 0 ]] ; then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  brew tap phinze/cask
-  brew tap caskroom/homebrew-versions
-  brew install brew-cask
 fi
 
 which -s rbenv
@@ -92,85 +89,6 @@ if [[ $? != 0 ]] ; then
   brew install sysbench
 fi
 
-brew cask list | grep atom &> /dev/null
-if [ $? == 1 ] ; then
-  brew cask install --force atom
-fi
-
-brew cask list | grep adium &> /dev/null
-if [ $? == 1 ] ; then
-  brew cask install --force adium
-fi
-
-brew cask list | grep alfred &> /dev/null
-if [ $? == 1 ] ; then
-  brew cask install --force alfred
-fi
-
-brew cask list | grep dropbox &> /dev/null
-if [ $? == 1 ] ; then
-  brew cask install --force dropbox
-fi
-
-brew cask list | grep google-chrome &> /dev/null
-if [ $? == 1 ] ; then
-  brew cask install --force google-chrome
-fi
-
-brew cask list | grep hipchat &> /dev/null
-if [ $? == 1 ] ; then
-  brew cask install --force hipchat
-fi
-
-brew cask list | grep iterm2 &> /dev/null
-if [ $? == 1 ] ; then
-  brew cask install --force iterm2
-fi
-
-brew cask list | grep spectacle &> /dev/null
-if [ $? == 1 ] ; then
-  brew cask install --force spectacle
-fi
-
-brew cask list | grep the-unarchiver &> /dev/null
-if [ $? == 1 ] ; then
-  brew cask install --force the-unarchiver
-fi
-
-brew cask list | grep tunnelblick &> /dev/null
-if [ $? == 1 ] ; then
-  brew cask install --force tunnelblick
-fi
-
-brew cask list | grep transmission &> /dev/null
-if [ $? == 1 ] ; then
-  brew cask install --force transmission
-fi
-
-brew cask list | grep virtualbox &> /dev/null
-if [ $? == 1 ] ; then
-  brew cask install --force virtualbox
-fi
-
-brew cask list | grep spotify &> /dev/null
-if [ $? == 1 ] ; then
-  brew cask install --force spotify
-fi
-
-brew cask list | grep vagrant &> /dev/null
-if [ $? == 1 ] ; then
-  brew cask install --force vagrant
-fi
-
-brew cask list | grep menumeters &> /dev/null
-if [ $? == 1 ] ; then
-  brew cask install --force menumeters
-fi
-
-brew cask list | grep transmission &> /dev/null
-if [ $? == 1 ] ; then
-  brew cask install --force transmission
-fi
 
 if [ ! -f ~/.git-completion.bash ]; then
   wget -O ~/.git-completion.bash https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
@@ -229,6 +147,8 @@ if [ ! gem lis ghost -i ]; then
   sudo gem install ghost
 fi
 
+mkdir -p ~/.ssh/
+
 # Create link´s.
 # ===============
 ln -s ~/.myterm/bash/dotfiles/bash_profile ~/.bash_profile
@@ -247,7 +167,7 @@ ln -s ~/.myterm/bash/dotfiles/gitignore_global ~/.gitignore_global
 # ============================
 ~/.myterm/configs/git.sh
 ~/.myterm/configs/osx.sh
-~/.myterm/configs/atom.sh
+~/.myterm/configs/sublimetext.sh
 
 # Reload profile.
 # ===============
