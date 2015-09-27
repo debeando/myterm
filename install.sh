@@ -11,9 +11,6 @@ xcode-select --print-path
 which -s brew
 if [[ $? != 0 ]] ; then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  brew tap phinze/cask
-  brew tap caskroom/homebrew-versions
-  brew install brew-cask
 fi
 
 which -s rbenv
@@ -92,6 +89,7 @@ if [[ $? != 0 ]] ; then
   brew install sysbench
 fi
 
+<<<<<<< HEAD
 brew cask list | grep sublime-text &> /dev/null
 if [ $? == 1 ] ; then
   brew cask install --force sublime-text
@@ -171,6 +169,8 @@ brew cask list | grep transmission &> /dev/null
 if [ $? == 1 ] ; then
   brew cask install --force transmission
 fi
+=======
+>>>>>>> 48550f286d95b582c6104eee6cbba318168fab5d
 
 if [ ! -f ~/.git-completion.bash ]; then
   wget -O ~/.git-completion.bash https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
@@ -229,6 +229,8 @@ if [ ! gem lis ghost -i ]; then
   sudo gem install ghost
 fi
 
+mkdir -p ~/.ssh/
+
 # Create link´s.
 # ===============
 ln -s ~/.myterm/bash/dotfiles/bash_profile ~/.bash_profile
@@ -238,6 +240,7 @@ ln -s ~/.myterm/bash/dotfiles/functions ~/.functions
 ln -s ~/.myterm/bash/dotfiles/editrc ~/.editrc
 ln -s ~/.myterm/bash/dotfiles/vimrc ~/.vimrc
 ln -s ~/.myterm/bash/dotfiles/grcat ~/.grcat
+ln -s ~/.myterm/bash/dotfiles/gemrc ~/.gemrc
 ln -s ~/.myterm/bash/dotfiles/my.cnf ~/.my.cnf
 ln -s ~/.myterm/bash/dotfiles/ssh_config ~/.ssh/config
 ln -s ~/.myterm/bash/dotfiles/gitignore_global ~/.gitignore_global
@@ -247,7 +250,7 @@ ln -s ~/.myterm/bash/dotfiles/tmux.conf ~/.tmux.conf
 # ============================
 ~/.myterm/configs/git.sh
 ~/.myterm/configs/osx.sh
-~/.myterm/configs/subl.sh
+~/.myterm/configs/sublimetext.sh
 
 # Reload profile.
 # ===============

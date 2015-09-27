@@ -6,7 +6,11 @@ export HISTCONTROL=ignoredups
 
 # Set custom alias
 # ----------------
+<<<<<<< HEAD
 alias e='subl'
+=======
+alias a='atom'
+>>>>>>> 48550f286d95b582c6104eee6cbba318168fab5d
 alias l='ls'
 alias ll='ls -lahGF'
 alias h='history'
@@ -17,8 +21,14 @@ alias t='tail -f'
 alias ..='cd ..'
 alias cd..='cd ..'
 alias loadme='source ~/.bash_profile'
+<<<<<<< HEAD
 alias editprofile='subl ~/.bash_profile'
 alias sshkh='subl ~/.ssh/known_hosts'
+=======
+alias editprofile='vim ~/.bash_profile'
+alias sshkh='vim ~/.ssh/known_hosts'
+alias ssh='ssh -o StrictHostKeyChecking=no -A'
+>>>>>>> 48550f286d95b582c6104eee6cbba318168fab5d
 
 # Set custom Alias for Git
 # ------------------------
