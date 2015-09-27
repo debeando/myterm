@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> c9239b5a11317cd626ec81b9eefcd66b43ff74ed
 " Global settings
 set hidden                                                                                                              " don't unload buffer when switching away
 set modeline                                                                                                            " allow per-file settings via modeline

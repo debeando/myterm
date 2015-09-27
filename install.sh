@@ -92,9 +92,9 @@ if [[ $? != 0 ]] ; then
   brew install sysbench
 fi
 
-brew cask list | grep atom &> /dev/null
+brew cask list | grep sublime-text &> /dev/null
 if [ $? == 1 ] ; then
-  brew cask install --force atom
+  brew cask install --force sublime-text
 fi
 
 brew cask list | grep adium &> /dev/null
@@ -241,12 +241,13 @@ ln -s ~/.myterm/bash/dotfiles/grcat ~/.grcat
 ln -s ~/.myterm/bash/dotfiles/my.cnf ~/.my.cnf
 ln -s ~/.myterm/bash/dotfiles/ssh_config ~/.ssh/config
 ln -s ~/.myterm/bash/dotfiles/gitignore_global ~/.gitignore_global
+ln -s ~/.myterm/bash/dotfiles/tmux.conf ~/.tmux.conf
 
 # Run several config commands.
 # ============================
 ~/.myterm/configs/git.sh
 ~/.myterm/configs/osx.sh
-~/.myterm/configs/atom.sh
+~/.myterm/configs/subl.sh
 
 # Reload profile.
 # ===============

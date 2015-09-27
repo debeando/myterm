@@ -6,12 +6,10 @@ export HISTCONTROL=ignoredups
 
 # Set custom alias
 # ----------------
-alias rm='mv ~/.Trash/'
-alias a='atom'
+alias e='subl'
 alias l='ls'
 alias ll='ls -lahGF'
 alias h='history'
-alias hg="history | grep"
 alias c='clear'
 alias s='sudo'
 alias ss='sudo su'
@@ -19,8 +17,8 @@ alias t='tail -f'
 alias ..='cd ..'
 alias cd..='cd ..'
 alias loadme='source ~/.bash_profile'
-alias editprofile='atom ~/.bash_profile'
-alias sshkh='atom ~/.ssh/known_hosts'
+alias editprofile='subl ~/.bash_profile'
+alias sshkh='subl ~/.ssh/known_hosts'
 
 # Set custom Alias for Git
 # ------------------------
