@@ -64,6 +64,12 @@ defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool true
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerHorizSwipeGesture -int 1
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -int 1
 
+# Disable just smart dashes
+defaults write -g NSAutomaticDashSubstitutionEnabled 0
+
+# Disable just smart quotes
+defaults write -g NSAutomaticQuoteSubstitutionEnabled 0
+
 ################################################################################
 # Finder                                                                       #
 ################################################################################
@@ -152,9 +158,6 @@ defaults write com.apple.iTunes disableRadio -bool true
 
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
-
-# Use a modified version of the Pro theme by default in Terminal.app
-open ~/.myterm/bash/theme/Solarized\ Dark.terminal
 
 ################################################################################
 # Time Machine                                                                 #

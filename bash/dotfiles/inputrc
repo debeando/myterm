@@ -2,11 +2,3 @@ set input-meta on
 set output-meta on
 set convert-meta off
 set completion-ignore-case on
-
-# For ALT with left/right arrows.
-"\e[1;6D": backward-word
-"\e[1;6C": forward-word
-
-# For CTRL with left/right arrows.
-"\e[1;5D": backward-word
-"\e[1;5C": forward-word

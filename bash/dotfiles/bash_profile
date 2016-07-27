@@ -37,19 +37,21 @@ parse_git_branch() {
 
 # Get Ruby Versión
 # ----------------
-export RBENV_ROOT=/usr/local/var/rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
+# export RBENV_ROOT=/usr/local/var/rbenv
+# export PATH="$HOME/.rbenv/bin:$PATH"
 
-if which rbenv > /dev/null; then
-  eval "$(rbenv init -)";
-  rbenv local 2.1.2
-fi
+# if which rbenv > /dev/null; then
+#  eval "$(rbenv init -)";
+#  rbenv local 2.1.2
+# fi
 
 function ruby_version {
   if [ -d .git ]; then
-    rbv=`rbenv version`
-    [[ $rbv == *"@"* ]] || rbv="[${rbv:0:5}]"
-    echo $rbv
+    if [ -f "$HOME/.rbenv/version" ]; then
+      rbv=`rbenv version`
+      [[ $rbv == *"@"* ]] || rbv="[${rbv:0:5}]"
+      echo $rbv
+    fi
   fi
 }
 
@@ -80,7 +82,7 @@ fi
 
 # Global Variables for Amazon AWS
 # -------------------------------
-export JAVA_HOME=$(/usr/libexec/java_home)
+# export JAVA_HOME=$(/usr/libexec/java_home)
 export RDS_URL=https://rds.eu-west-1.amazonaws.com
 export EC2_URL=https://ec2.eu-west-1.amazonaws.com
 export EC2_REGION=eu-west-1

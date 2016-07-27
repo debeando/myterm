@@ -6,7 +6,9 @@ This is my customized terminal, only for Mac OS X, inside contains; themes, scri
 
 Run this commands in your terminal:
 
-	git clone https://github.com/nicola51980/myterm.git ~/.myterm/
-	~/.myterm/install.sh
+```bash
+git clone https://github.com/swapbytes/myterm.git ~/.myterm/
+~/.myterm/install.sh
+```
 
 Good lock!.
