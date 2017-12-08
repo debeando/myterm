@@ -1,6 +1,7 @@
 " Global settings
 set hidden                                                                                                              " don't unload buffer when switching away
 set modeline                                                                                                            " allow per-file settings via modeline
+set modelines=3
 set exrc                                                                                                                " enable per-directory .vimrc files
 set secure                                                                                                              " disable unsafe commands in local .vimrc files
 set encoding=utf-8 fileencoding=utf-8 termencoding=utf-8                                                                " saving and encoding
@@ -13,7 +14,7 @@ set mouse=a                                                                     
 set nomousehide                                                                                                         " don't hide the mouse cursor while typing
 set mousemodel=popup                                                                                                    " right-click pops up context menu
 set ruler                                                                                                               " show cursor position in status bar
-set relativenumber                                                                                                      " show relative line numbers
+"set relativenumber                                                                                                      " show relative line numbers
 set number                                                                                                              " show absolute line number of the current line
 set nofoldenable                                                                                                        " I fucking hate code folding
 set scrolloff=10                                                                                                        " scroll the window so we can always see 10 lines around the cursor
@@ -27,6 +28,7 @@ set visualbell                                                                  
 set noerrorbells                                                                                                        " don't beep
 set nosmartindent
 set noautoindent
+set filetype=on
 
 " Formatting
 filetype plugin indent on
