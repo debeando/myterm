@@ -8,16 +8,6 @@ if [ -f ~/.aliases ]; then
   . ~/.aliases
 fi
 
-# Include private scripts
-# -----------------------
-if [ -f ~/Dropbox/Private/Bash/alias.sh ]; then
-  . ~/Dropbox/Private/Bash/alias.sh
-fi
-
-if [ -f ~/Dropbox/Private/Bash/exports.sh ]; then
-  . ~/Dropbox/Private/Bash/exports.sh
-fi
-
 # Load Bash Completion
 # --------------------
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
@@ -35,26 +25,6 @@ parse_git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-# Get Ruby Versión
-# ----------------
-# export RBENV_ROOT=/usr/local/var/rbenv
-# export PATH="$HOME/.rbenv/bin:$PATH"
-
-# if which rbenv > /dev/null; then
-#  eval "$(rbenv init -)";
-#  rbenv local 2.1.2
-# fi
-
-function ruby_version {
-  if [ -d .git ]; then
-    if [ -f "$HOME/.rbenv/version" ]; then
-      rbv=`rbenv version`
-      [[ $rbv == *"@"* ]] || rbv="[${rbv:0:5}]"
-      echo $rbv
-    fi
-  fi
-}
-
 # Enable 8bit input
 set input-meta on
 
@@ -68,7 +38,7 @@ set convert-meta off
 # ------------------------------------
 if [ -n "$BASH_VERSION" ]; then
   export SUDO_PS1="\[\033[31m\]\u:\[\033[32m\]\w\\$\[\033[0m\] "
-  export PS1="\[\033[36m\]\u:\[\033[32m\]\w\[\033[36m\]\$(ruby_version)\[\033[31m\]\$(parse_git_branch)\[\033[32m\]\\$\[\033[0m\] "
+  export PS1="\[\033[36m\]\u:\[\033[32m\]\w\[\033[31m\]\$(parse_git_branch)\[\033[32m\]\\$\[\033[0m\] "
   export CLICOLOR=1
   export LSCOLORS=ExFxBxDxCxegedabagacad
   export TERM='xterm-256color'
@@ -82,7 +52,6 @@ fi
 
 # Global Variables for Amazon AWS
 # -------------------------------
-# export JAVA_HOME=$(/usr/libexec/java_home)
 export RDS_URL=https://rds.eu-west-1.amazonaws.com
 export EC2_URL=https://ec2.eu-west-1.amazonaws.com
 export EC2_REGION=eu-west-1
@@ -118,9 +87,7 @@ export LANGUAGE=en_US.UTF-8
 
 # Set editor
 # ----------
-export EDITOR='subl -w'
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export EDITOR='vim'
 
 # Disable email notifications
 # ---------------------------

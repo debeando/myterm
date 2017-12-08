@@ -1,9 +1,12 @@
 #!/bin/bash
 
-# Download first xcode CommandLineTools dropbox, signin and sync all, before run this script.
+if [ ! -d "~/.myterm/" ]; then
+  git clone https://github.com/swapbytes/myterm.git ~/.myterm/ &> /dev/null
+fi
 
-sudo xcode-select --install
-xcode-select --print-path
+# Download first xcode CommandLineTools:
+# ======================================
+sudo xcode-select --install &> /dev/null
 
 # Install packages:
 # =================
@@ -11,12 +14,6 @@ xcode-select --print-path
 which -s brew
 if [[ $? != 0 ]] ; then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
-
-which -s rbenv
-if [[ $? != 0 ]] ; then
-  brew install rbenv ruby-build
-  rbenv install 2.1.2
 fi
 
 which -s curl
@@ -39,21 +36,6 @@ if [[ $? != 0 ]] ; then
   brew install multitail
 fi
 
-which -s html2text
-if [[ $? != 0 ]] ; then
-  brew install html2text
-fi
-
-which -s js
-if [[ $? != 0 ]] ; then
-  brew install spidermonkey
-fi
-
-which -s mpg123
-if [[ $? != 0 ]] ; then
-  brew install mpg123
-fi
-
 which -s rsync
 if [[ $? != 0 ]] ; then
   brew install rsync
@@ -74,29 +56,9 @@ if [[ $? != 0 ]] ; then
   brew install awscli
 fi
 
-# which -s percona-toolkit
-# if [[ $? != 0 ]] ; then
-#   brew install percona-toolkit
-# fi
-
 which -s sysbench
 if [[ $? != 0 ]] ; then
   brew install sysbench
-fi
-
-brew cask list | grep sublime-text &> /dev/null
-if [ $? == 1 ] ; then
-  brew cask install --force sublime-text
-fi
-
-brew cask list | grep adium &> /dev/null
-if [ $? == 1 ] ; then
-  brew cask install --force adium
-fi
-
-brew cask list | grep dropbox &> /dev/null
-if [ $? == 1 ] ; then
-  brew cask install --force dropbox
 fi
 
 brew cask list | grep google-chrome &> /dev/null
@@ -132,11 +94,6 @@ fi
 brew cask list | grep vagrant &> /dev/null
 if [ $? == 1 ] ; then
   brew cask install --force vagrant
-fi
-
-brew cask list | grep menumeters &> /dev/null
-if [ $? == 1 ] ; then
-  brew cask install --force menumeters
 fi
 
 if [ ! -f ~/.git-completion.bash ]; then
@@ -185,39 +142,26 @@ if [ -f ~/.my.cnf ]; then
   unlink ~/.my.cnf
 fi
 
-# Install gem's:
-# ==============
-if [ ! gem list termit -i ]; then
-  gem install termit
-fi
-
-if [ ! gem lis ghost -i ]; then
-  gem install ghost
-  sudo gem install ghost
-fi
-
 mkdir -p ~/.ssh/
 
 # Create link´s:
 # ===============
-ln -s ~/.myterm/bash/dotfiles/bash_profile ~/.bash_profile
-ln -s ~/.myterm/bash/dotfiles/inputrc ~/.inputrc
-ln -s ~/.myterm/bash/dotfiles/aliases ~/.aliases
-ln -s ~/.myterm/bash/dotfiles/functions ~/.functions
-ln -s ~/.myterm/bash/dotfiles/editrc ~/.editrc
-ln -s ~/.myterm/bash/dotfiles/vimrc ~/.vimrc
-ln -s ~/.myterm/bash/dotfiles/grcat ~/.grcat
-ln -s ~/.myterm/bash/dotfiles/gemrc ~/.gemrc
-ln -s ~/.myterm/bash/dotfiles/my.cnf ~/.my.cnf
-ln -s ~/.myterm/bash/dotfiles/ssh_config ~/.ssh/config
-ln -s ~/.myterm/bash/dotfiles/gitignore_global ~/.gitignore_global
-ln -s ~/.myterm/bash/dotfiles/tmux.conf ~/.tmux.conf
+ln -s ~/.myterm/dotfiles/bash_profile ~/.bash_profile
+ln -s ~/.myterm/dotfiles/inputrc ~/.inputrc
+ln -s ~/.myterm/dotfiles/aliases ~/.aliases
+ln -s ~/.myterm/dotfiles/functions ~/.functions
+ln -s ~/.myterm/dotfiles/editrc ~/.editrc
+ln -s ~/.myterm/dotfiles/vimrc ~/.vimrc
+ln -s ~/.myterm/dotfiles/grcat ~/.grcat
+ln -s ~/.myterm/dotfiles/my.cnf ~/.my.cnf
+ln -s ~/.myterm/dotfiles/ssh_config ~/.ssh/config
+ln -s ~/.myterm/dotfiles/gitignore_global ~/.gitignore_global
+ln -s ~/.myterm/dotfiles/tmux.conf ~/.tmux.conf
 
 # Run several config commands:
 # ============================
-~/.myterm/configs/git.sh
-~/.myterm/configs/osx.sh
-~/.myterm/configs/sublimetext.sh
+~/.myterm/scripts/git.sh
+~/.myterm/scripts/osx.sh
 
 # Reload profile:
 # ===============

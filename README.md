@@ -1,4 +1,4 @@
-#My custom Bash
+# My custom Bash
 
 This is my customized terminal, only for Mac OS X, inside contains; themes, scripts, configs, and more...
 
@@ -7,8 +7,7 @@ This is my customized terminal, only for Mac OS X, inside contains; themes, scri
 Run this commands in your terminal:
 
 ```bash
-git clone https://github.com/swapbytes/myterm.git ~/.myterm/
-~/.myterm/install.sh
+curl --silent https://raw.githubusercontent.com/swapbyt3s/myterm/master/install.sh | /bin/bash
 ```
 
 Good lock!.
